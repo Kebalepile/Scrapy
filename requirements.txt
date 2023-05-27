@@ -1,3 +1,5 @@
 1. python vesion +3.11.*
 2. pip vesion +23.*.*
 3. install scrapy version 2.9.0
+4. pip install random_user_agent 
+5. pip install proxy-randomizer

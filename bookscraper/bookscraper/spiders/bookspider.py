@@ -7,6 +7,7 @@ class BookspiderSpider(scrapy.Spider):
     start_urls = ["https://books.toscrape.com"]
 
     def parse(self, response):
+        print(f"*--------------*\n UserAgent ya ga go ke : {response.request.headers} \n*--------------*")
         books = response.css("article.product_pod")
 
         for book in books:

@@ -28,8 +28,6 @@ class BookscraperPipeline:
         price_keys = ["price", "price_excl_tax", "price_inc_tax", "tax"]
         for price_key in price_keys:
             value = adapter.get(price_key)
-            
-            print(value)
             adapter[price_key] = float(value[1:])
 
         # Availability ----> extract number of books in stock.
@@ -61,3 +59,6 @@ class BookscraperPipeline:
         adapter["stars"] = stars_conversion[start_rating]
 
         return item
+    def close_spider(self, spider):
+        print(f"*--------------*\n K e heditse ka go dirisa: {spider.name} \n*--------------*")
+       
